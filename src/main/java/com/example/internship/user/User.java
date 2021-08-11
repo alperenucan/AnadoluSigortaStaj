@@ -10,8 +10,4 @@ public class User {
 
     @Id
     private Long id;
-//
-//    public User(Long id) {
-//        this.id = id;
-//    }
 }
