@@ -19,7 +19,7 @@ public class UserService {
     public List<User> getUsers() {
         return userRepository.findAll();
     }
-    public void addNewStudent(User user) {
+    public void addNewUser(User user) {
         Optional<User> userById = userRepository.findUserById(user.getId());
         if(userById.isPresent()){
             throw new IllegalStateException("id is taken");
