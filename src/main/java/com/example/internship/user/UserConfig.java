@@ -14,6 +14,8 @@ public class UserConfig {
         return args -> {
             User a = new User(1L);
             User b = new User(56L);
+            System.out.println(a);
+            System.out.println(b);
 
 
             repository.saveAll(
