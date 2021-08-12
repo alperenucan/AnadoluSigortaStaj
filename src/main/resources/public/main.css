@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.container {
+  padding: 60px 35px 35px 35px;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
+  background-color: #f8f8f8;
+  border-radius: 0.7rem;
+  width: 24vw;
+  transition: all 0.2s;
+  min-height: 350px;
+  max-height: 400px;
+  min-weight: 400px;
+}
+
+.container:hover {
+  transform: translateY(-10px);
+}
+
+.container h1 {
+  font-size: 2.4rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  color: tomato;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  height: 60%;
+  display: flex;
+  align-items: center;
+}
+
+.show-btn {
+  border: 1px solid tomato;
+  border-radius: 0.3rem;
+  display: inline-block;
+  padding: 0.3rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  background-color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.show-btn:hover {
+  color: white;
+  background-color: tomato;
+  border: 1px solid tomato;
+}
+
+.user-infos ul li {
+  list-style: none;
+}
+
+.file-container {
+  width: 100%;
+  text-align: center;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file-upload {
+  border: 1px solid tomato;
+  border-radius: 0.3rem;
+  display: inline-block;
+  padding: 0.3rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-upload:hover {
+  color: white;
+  background-color: tomato;
+  border: 1px solid tomato;
+}
+
+.select-container {
+  width: 100%;
+  text-align: center;
+}
+.select-container label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(99, 99, 99);
+  margin-bottom: 1rem;
+}
+
+.select-container select {
+  width: 60%;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  margin-top: 1rem;
+  border: 1px solid tomato;
+  font-size: 1rem;
+}
+
+.select-container select:focus {
+  border-color: rgba(229, 103, 23, 0.8);
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset,
+    0 0 8px rgba(229, 103, 23, 0.6);
+  outline: 0 none;
+}
+
+@media only screen and (max-width: 1500px) {
+  .container {
+    width: 40vw;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    height: 70vh;
+    width: 70vw;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .container {
+    height: 80vh;
+    width: 95vw;
+    pointer-events: none;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+}

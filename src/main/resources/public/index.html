@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+<div class="container">
+  <h1>Please Select Connection Type and Upload File</h1>
+  <form action="?">
+    <div class="select-container">
+      <label for="connection">Connect Type</label> <br />
+      <select name="connection" id="connection">
+        <option disabled value="">Please select one</option>
+        <option value="SMS">SMS</option>
+        <option value="Email">E-mail</option>
+      </select>
+    </div>
+    <div class="file-container">
+      <label for="file-upload" class="file-upload">Upload File</label>
+      <input type="file" id="file-upload" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
+    </div>
+  </form>
+</div>
+</body>
+</html>
