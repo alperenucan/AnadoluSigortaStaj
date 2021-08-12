@@ -1,5 +1,7 @@
-package com.example.internship.user;
+package com.example.internship.controller;
 
+import com.example.internship.model.User;
+import com.example.internship.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +23,8 @@ public class UserController {
 
    @GetMapping
    public List<User> getUsers(){
-      return userService.getUsers();
+
+        return userService.getUsers();
+
    }
 }

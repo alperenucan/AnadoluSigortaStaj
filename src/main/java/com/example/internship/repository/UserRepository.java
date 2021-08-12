@@ -1,5 +1,6 @@
-package com.example.internship.user;
+package com.example.internship.repository;
 
+import com.example.internship.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -11,5 +12,4 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     @Query("SELECT u FROM User u WHERE u.id=?1")
     Optional<User> findUserById(Long id);
-
 }

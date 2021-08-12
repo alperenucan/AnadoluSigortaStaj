@@ -1,5 +1,7 @@
-package com.example.internship.user;
+package com.example.internship.model;
 
+import com.poiji.annotation.ExcelCell;
+import com.poiji.annotation.ExcelRow;
 import lombok.*;
 import javax.persistence.*;
 
@@ -10,7 +12,11 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class User {
 
+    @ExcelCell(0)
     @Id
     @Column(name = "id", nullable = false)
     private Long id;
+
+    @Column(name="isSent",nullable = true)
+    private boolean isSent;
 }
