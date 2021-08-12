@@ -1,4 +1,4 @@
-package com.example.internship.user;
+package com.example.internship.model;
 
 import lombok.*;
 import javax.persistence.*;

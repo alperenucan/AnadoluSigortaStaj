@@ -1,5 +1,7 @@
-package com.example.internship.user;
+package com.example.internship.config;
 
+import com.example.internship.model.User;
+import com.example.internship.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,5 +1,7 @@
-package com.example.internship.user;
+package com.example.internship.service;
 
+import com.example.internship.model.User;
+import com.example.internship.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
