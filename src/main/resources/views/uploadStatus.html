@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./static/main.css">
 </head>
 <body>
 <div class="container">
 
     <h1>Result</h1>
     <p th:text="'type: ' + ${file.connection}"/>
-    <a href="/upload">Submit another message</a>
+    <a class="file-upload" href="/">Submit another message</a>
+    <h1>Spring Boot - Upload Status</h1>
+
+    <div th:if="${message}">
+        <h2 th:text="${message}"/>
+    </div>
 </div>
 </body>
 </html>
