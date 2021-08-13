@@ -17,7 +17,6 @@ public class UserController {
 
     @Autowired
     public UserController(UserService userService) {
-
         this.userService = userService;
     }
 
