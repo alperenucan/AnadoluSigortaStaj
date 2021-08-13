@@ -8,20 +8,27 @@
 <body>
 <div class="container">
     <h1>Please Select Connection Type and Upload File</h1>
-    <form th:action="@{/selection}" th:object="${file}" method="post">
+    <form th:action="@{/upload}" th:object="${file}" method="post">
         <div class="select-container">
-            <label for="connection">Connect Type</label> <br/>
+            <label for="connection">Connection Type</label> <br/>
             <select name="connection" id="connection">
                 <option disabled value="">Please select one</option>
                 <option th:value="SMS">SMS</option>
                 <option th:value="Email">E-mail</option>
             </select>
         </div>
-        <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
-        <!--    <div class="file-container">-->
-        <!--        <label for="file-upload" class="file-upload">Upload File</label>-->
-        <!--        <input type="file" id="file-upload" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />-->
-        <!--    </div>-->
+
+        <div class="file-container">
+            <label for="file-upload" class="file-upload">Upload File</label>
+            <input type="file" id="file-upload">
+<!--            <input type="file" id="file-upload"-->
+<!--                   accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>-->
+        </div>
+
+        <div class="button-container">
+            <input class="file-upload" type="submit" value="Submit"/>
+            <input class="file-upload" type="reset" value="Reset"/>
+        </div>
     </form>
 </div>
 </body>

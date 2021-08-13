@@ -17,10 +17,10 @@ body {
   box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
   background-color: #f8f8f8;
   border-radius: 0.7rem;
-  width: 24vw;
   transition: all 0.2s;
+  width: 24vw;
   min-height: 350px;
-  max-height: 400px;
+  max-height: 500px;
   min-weight: 400px;
 }
 
@@ -120,6 +120,12 @@ input[type="file"] {
   outline: 0 none;
 }
 
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 @media only screen and (max-width: 1500px) {
   .container {
     width: 40vw;
@@ -137,7 +143,10 @@ input[type="file"] {
   .container {
     height: 80vh;
     width: 95vw;
-    pointer-events: none;
+  }
+
+  .container:hover {
+    transform: translateY(0px);
   }
 
   .container h1 {
