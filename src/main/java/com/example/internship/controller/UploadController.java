@@ -21,14 +21,17 @@ public class UploadController {
     //Save the uploaded file to this folder
     private static String UPLOADED_FOLDER = "C://test//";
 
-    @GetMapping
-    public String index() {
+    @GetMapping("/upload")
+    public String index(Model model) {
+        model.addAttribute("connection", new File());
         return "upload";
     }
 
     @PostMapping("/upload")
     public String singleFileUpload(@RequestParam("file") MultipartFile file,
-                                   RedirectAttributes redirectAttributes) {
+                                   RedirectAttributes redirectAttributes, @ModelAttribute File binder, Model model) {
+
+
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:uploadStatus";
@@ -40,9 +43,9 @@ public class UploadController {
             byte[] bytes = file.getBytes();
             Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
             Files.write(path, bytes);
-
+            model.addAttribute("connection", binder);
             redirectAttributes.addFlashAttribute("message",
-                    "You successfully uploaded '" + file.getOriginalFilename() + "'");
+                    "You successfully uploaded '" + file.getOriginalFilename() + "' " + binder);
 
         } catch (IOException e) {
             e.printStackTrace();
