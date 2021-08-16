@@ -1,6 +1,6 @@
 package com.example.internship.controller;
 
-import com.example.internship.model.File;
+import com.example.internship.model.Connection;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,25 +16,25 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @Controller
-public class UploadController {
+public class NotificationController {
 
     //Save the uploaded file to this folder
     private static String UPLOADED_FOLDER = "C://test//";
 
     @GetMapping("/upload")
     public String index(Model model) {
-        model.addAttribute("connection", new File());
-        return "upload";
+        model.addAttribute("connection", new Connection());
+        return "form";
     }
 
     @PostMapping("/upload")
     public String singleFileUpload(@RequestParam("file") MultipartFile file,
-                                   RedirectAttributes redirectAttributes, @ModelAttribute File binder, Model model) {
+                                   RedirectAttributes redirectAttributes, @ModelAttribute Connection type, Model model) {
 
 
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
-            return "redirect:uploadStatus";
+            return "redirect:status";
         }
 
         try {
@@ -43,19 +43,19 @@ public class UploadController {
             byte[] bytes = file.getBytes();
             Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
             Files.write(path, bytes);
-            model.addAttribute("connection", binder);
+            model.addAttribute("connection", type);
             redirectAttributes.addFlashAttribute("message",
-                    "You successfully uploaded '" + file.getOriginalFilename() + "' " + binder);
+                    "You successfully uploaded '" + file.getOriginalFilename() + "' " + type);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        return "redirect:/uploadStatus";
+        return "redirect:/status";
     }
 
-    @GetMapping("/uploadStatus")
+    @GetMapping("/status")
     public String uploadStatus() {
-        return "uploadStatus";
+        return "status";
     }
 }
