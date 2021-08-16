@@ -19,9 +19,6 @@ body {
   border-radius: 0.7rem;
   transition: all 0.2s;
   width: 24vw;
-  min-height: 350px;
-  max-height: 500px;
-  min-weight: 400px;
 }
 
 .container:hover {
@@ -71,10 +68,14 @@ body {
 .file-container {
   width: 100%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 input[type="file"] {
-  display: block;
+  display: none;
 }
 
 .file-upload {
@@ -93,10 +94,51 @@ input[type="file"] {
   border: 1px solid tomato;
 }
 
+.close {
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 59%;
+  top: 1.2rem;
+  display: none;
+}
+
+.close:after {
+  content: "";
+  height: 20px;
+  border-left: 4px solid tomato;
+  position: absolute;
+  transform: rotate(45deg);
+  left: 28px;
+}
+
+.close:before {
+  content: "";
+  height: 20px;
+  border-left: 4px solid tomato;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 28px;
+}
+
+.check {
+  transform: rotate(45deg);
+  height: 16px;
+  width: 10px;
+  border-bottom: 5px solid #78b13f;
+  border-right: 5px solid #78b13f;
+  display: none;
+  position: absolute;
+  left: 68%;
+  top: 1.2rem;
+}
+
 .select-container {
   width: 100%;
   text-align: center;
 }
+
 .select-container label {
   font-size: 1.2rem;
   font-weight: bold;
@@ -111,6 +153,7 @@ input[type="file"] {
   margin-top: 1rem;
   border: 1px solid tomato;
   font-size: 1rem;
+  background-color: transparent;
 }
 
 .select-container select:focus {
@@ -121,32 +164,43 @@ input[type="file"] {
 }
 
 .button-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-@media only screen and (max-width: 1500px) {
+@media screen and (max-width: 1500px) {
   .container {
     width: 40vw;
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
   .container {
     height: 70vh;
     width: 70vw;
   }
 }
 
-@media only screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
   .container {
-    height: 80vh;
-    width: 95vw;
+    height: 100vh;
+    width: 100vw;
+    padding: 10px;
+    border-radius: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .container:hover {
     transform: translateY(0px);
+  }
+
+  form {
+    width: 90%;
   }
 
   .container h1 {
