@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class FileController {
 
-//    @GetMapping("/connectType")
+//    @GetMapping("/")
 //    public String getType(Model model) {
 //        model.addAttribute("connection", new File());
 //        return "upload";
 //    }
 //
-//    @PostMapping("/connectType")
+//    @PostMapping("/upload")
 //    public String selectType(@ModelAttribute File file, Model model) {
 //        model.addAttribute("connection", file);
 //        return "uploadStatus";
