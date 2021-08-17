@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class File {
-    private File file;
+public class Connection {
     private String connection;
 }

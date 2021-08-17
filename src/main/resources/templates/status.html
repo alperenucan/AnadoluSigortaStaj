@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body style="display: block">
+
+<h2 th:if="${message}" th:text="${message}"/>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th class="state">
+            <span>State</span>
+            <div class="unsent-input">
+                <input id="unsents" type="checkbox">
+                <label for="unsents">Unsents</label>
+            </div>
+        </th>
+        <th>Type</th>
+    </tr>
+    <tr class="sent">
+        <td>165325</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="unsent">
+        <td>162578</td>
+        <td>Unsent</td>
+        <td>E-Mail</td>
+    </tr>
+    <tr class="unsent">
+        <td>164679</td>
+        <td>Unsent</td>
+        <td>E-Mail</td>
+    </tr>
+    <tr class="sent">
+        <td>160225</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="sent">
+        <td>163345</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="sent">
+        <td>163345</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="sent">
+        <td>163345</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="sent">
+        <td>163345</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="sent">
+        <td>163345</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="unsent">
+        <td>163345</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="unsent">
+        <td>163345</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="unsent">
+        <td>163345</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="sent">
+        <td>163345</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+    <tr class="sent">
+        <td>163345</td>
+        <td>Sent</td>
+        <td>SMS</td>
+    </tr>
+</table>
+<script src="js/index.js"></script>
+</body>
+</html>
