@@ -1,6 +1,8 @@
 package com.example.internship.controller;
 
 import com.example.internship.model.Connection;
+import com.example.internship.service.XLSXReaderService;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +20,7 @@ import java.nio.file.Paths;
 @Controller
 public class NotificationController {
 
+    XLSXReaderService xlsxReaderService = new XLSXReaderService();
     //Save the uploaded file to this folder
     private static String UPLOADED_FOLDER = "C://test//";
 
@@ -44,10 +47,11 @@ public class NotificationController {
             Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
             Files.write(path, bytes);
             model.addAttribute("connection", type);
-            redirectAttributes.addFlashAttribute("message",
-                    "You successfully uploaded '" + file.getOriginalFilename() + "' " + type);
 
-        } catch (IOException e) {
+            redirectAttributes.addFlashAttribute("message",
+                    "You successfully uploaded '" + file.getOriginalFilename() + "' " + type+ xlsxReaderService.ReadExcel(file));
+
+        } catch (IOException | InvalidFormatException e) {
             e.printStackTrace();
         }
 

@@ -2,6 +2,7 @@ package com.example.internship.config;
 
 import com.example.internship.model.User;
 import com.example.internship.repository.UserRepository;
+import com.example.internship.service.XLSXReaderService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,10 +16,9 @@ public class UserConfig {
     CommandLineRunner commandLineRunner(
             UserRepository repository){
         return args -> {
-            User a = new User(1L,false);
-            User b = new User(56L,true);
-            System.out.println(a);
-            System.out.println(b);
+            User a = new User(1L);
+            User b = new User(56L);
+
 
 
             repository.saveAll(

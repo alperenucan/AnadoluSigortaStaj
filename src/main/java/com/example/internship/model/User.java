@@ -17,6 +17,6 @@ public class User {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name="isSent",nullable = true)
-    private boolean isSent;
+//    @Column(name="isSent",nullable = true)
+//    private boolean isSent;
 }
