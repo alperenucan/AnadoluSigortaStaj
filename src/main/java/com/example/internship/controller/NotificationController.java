@@ -34,7 +34,6 @@ public class NotificationController {
     public String singleFileUpload(@RequestParam("file") MultipartFile file,
                                    RedirectAttributes redirectAttributes, @ModelAttribute Connection type, Model model) {
 
-
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("message", "Please select a file to upload");
             return "redirect:status";
@@ -51,7 +50,7 @@ public class NotificationController {
             redirectAttributes.addFlashAttribute("message",
                     "You successfully uploaded '" + file.getOriginalFilename() + "' " + type+ xlsxReaderService.ReadExcel(file));
 
-        } catch (IOException | InvalidFormatException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
